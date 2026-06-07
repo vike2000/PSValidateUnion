@@ -1,7 +1,4 @@
 beforeAll {
-	remove-module -ea 0 PSValidateUnion
-	import-module "$PSScriptRoot/../ValidateUnion.psd1"
-	
 	function fixture([ValidateUnion([scriptBlock], [string])] $argument) {}
 }
 
@@ -15,3 +12,5 @@ describe "ValidateUnion" {
 		{fixture 1		}|should		-throw -expectedMessage "Cannot validate argument on parameter 'argument'. Type ``[scriptblock``], ``[string``] required, int $(	)given in value: 1"
 	}
 }
+
+# vike's personal execution: cd1 /œ∂/ps1/com.dyn_o_saur.bluelephant.pwsh/ValidateUnion invoke-isolated -verbose -usingPathModule ./ValidateUnion.psd1 {invoke-pester tests/*}

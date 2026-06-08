@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 0.1.2
+.VERSION 0.1.3
 
 .GUID 0a96e04b-b5ee-4752-a446-8d43e2db67dc
 
@@ -114,7 +114,7 @@
 				,																		$eighth		)	} #n=8
 		 [void		]								 Validate				([object]	$arguments		`
 			,[System.Management.Automation.EngineIntrinsics]							$engineIntrinsics)
-			{			foreach($arg	in @(											$arguments)	)
+			{			foreach($arg	in												$arguments	)
 				{				$val = $false														;
 				;		foreach($typ	in	$this.	 Types										  )	`
 				  {	if(			$arg															`

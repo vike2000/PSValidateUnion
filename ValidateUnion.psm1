@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 0.2
+.VERSION 0.2.1
 
 .GUID 0a96e04b-b5ee-4752-a446-8d43e2db67dc
 
@@ -114,36 +114,7 @@
 				,																		$eighth		)	} #n=8
 		 [void		]								 Validate				([object]	$argument		
 		 	,[System.Management.Automation.EngineIntrinsics]							$engineIntrinsics)
-			{<#
-#			;Write-Host "STACK:"
-#			;Get-PSCallStack | Select-Object -First 8 | Format-Table -AutoSize | Out-Host
-#			;Write-Host "VALIDATING:"
-#			;Write-Host "Type: $($arguments.GetType().FullName)"
-#			;Write-Host "Value: <$arguments>"
-#			;if	($arguments -is [System.Array])
-#				{Write-Host "Array count: $($arguments.Count)"}
-#			;Write-Host "----"
-#			;Write-Host "Attribute instance: $($this.GetHashCode())"
-#			;Write-Host "Types:"
-#			;$this.Types | % { Write-Host "  $_" }
-#			;Write-Host "Argument type: $($arguments.GetType().FullName)"
-#			;Write-Host "Argument value: <$arguments>"
-			;			foreach($arg	in												$arguments	)
-				{				$val = $false														;
-				;		foreach($typ	in	$this.	 Types										  )	`
-				  {	if(			$arg															`
-					-is			$typ															)
-					{			$val = $true													;
-					;break																		} }
-				;		if(-not	$val															  )
-				  {throw						   [ValidateUnionException]::new("VU[$($this.GetHashCode())] " + "Type"			`
-					+" "+				((	$this.	 Types|foreach-object {"[$_]"}) -join ', ')	`
-					+" "+		"required"												+ ","	`
-					+" "+		$arg.getType()													`
-					+" "+		"given"															`
-					+" "+		"in value:"														`
-					+" "+		$arg															) }	} #>
-			;foreach(								$type
+			{foreach(								$type
 				in							$this.	 Types											)
 				{if	(			$argument -is		$type										)	`
 					{return																		}	}	;

@@ -12,7 +12,7 @@
 RootModule = 'ValidateUnion.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.2.1'
+ModuleVersion = '0.3.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -30,7 +30,7 @@ CompanyName = 'pwsh.bluelephant.dyn-o-saur.com'
 Copyright = '(c) Viktor Bergquist'
 
 # Description of the functionality provided by this module
-Description = 'A union type argument validation attribute written and for use in pwsh .ps1 code. Currently only supporting one to eight types in the union set.'
+Description = 'A union type argument validation attribute written and for use in pwsh v7.5 .ps1 code. Supplies two different attribute classes for whether validating scalar or array item values. Currently only supporting one to eight types in the union set.'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''

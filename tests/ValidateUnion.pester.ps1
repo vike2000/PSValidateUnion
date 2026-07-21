@@ -7,7 +7,7 @@
 						else						{	$args[0..$args.length		] }} #cspell:words arrgs
 	
 	# support <specified> name template
-	;function			s(){process{$_.specified=" of $(convertTo-psCode ($_.s[1])) it should $($_.s[3..$_.s.count]|foreach-object{$_ -replace '^-',''})";$_}}
+	;function			s(){process{$_.specified=" of $(convertTo-psSource ($_.s[1])) it should $($_.s[3..$_.s.count]|foreach-object{$_ -replace '^-',''})";$_}}
 	
 	;beforeAll {
 		function acceptingScriptBlockOrString(			[ValidateUnion(				[scriptBlock], [string	])] $argument){}
